@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/postac1.png-854ee3b694456f55d0c7ad857169ec23.stex"
+path="res://.import/biurko.png-d0a8098b4087fe5397249119e1f20dc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/postac1.png"
-dest_files=[ "res://.import/postac1.png-854ee3b694456f55d0c7ad857169ec23.stex" ]
+source_file="res://assets/biurko.png"
+dest_files=[ "res://.import/biurko.png-d0a8098b4087fe5397249119e1f20dc2.stex" ]
 
 [params]
 

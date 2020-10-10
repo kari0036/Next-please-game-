@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/postac_strój1.png-cf07411c2c0061c578de4b0828f9b89c.stex"
+path="res://.import/postac3.png-aa4c629c2853fb813502be561fc7dc1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/postac_strój1.png"
-dest_files=[ "res://.import/postac_strój1.png-cf07411c2c0061c578de4b0828f9b89c.stex" ]
+source_file="res://assets/postac3.png"
+dest_files=[ "res://.import/postac3.png-aa4c629c2853fb813502be561fc7dc1b.stex" ]
 
 [params]
 

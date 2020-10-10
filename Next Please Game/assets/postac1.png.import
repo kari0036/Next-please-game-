@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stół.png-a79b13fb37d5aaeb2e609d4604c10b01.stex"
+path="res://.import/postac1.png-05775623ce6846fc042e9b575bd96996.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/stół.png"
-dest_files=[ "res://.import/stół.png-a79b13fb37d5aaeb2e609d4604c10b01.stex" ]
+source_file="res://assets/postac1.png"
+dest_files=[ "res://.import/postac1.png-05775623ce6846fc042e9b575bd96996.stex" ]
 
 [params]
 

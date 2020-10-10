@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TODO.png-e0ee642910c77497f0c031ce1af52df8.stex"
+path="res://.import/zegr.png-4d7126add34c64929fd9f0e065d7f146.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TODO.png"
-dest_files=[ "res://.import/TODO.png-e0ee642910c77497f0c031ce1af52df8.stex" ]
+source_file="res://assets/zegr.png"
+dest_files=[ "res://.import/zegr.png-4d7126add34c64929fd9f0e065d7f146.stex" ]
 
 [params]
 
