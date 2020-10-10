@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://ręka.gd" type="Script" id=1]
 [ext_resource path="res://assets/pokuj.png" type="Texture" id=2]
+[ext_resource path="res://assets/hand.png" type="Texture" id=3]
 [ext_resource path="res://assets/stół.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 13.8905
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -3.36365, -3.36359 )
@@ -14,3 +37,18 @@ texture = ExtResource( 5 )
 [node name="pokuj" type="Sprite" parent="."]
 position = Vector2( 128.779, 130.57 )
 texture = ExtResource( 2 )
+
+[node name="ręka" type="KinematicBody2D" parent="."]
+position = Vector2( 138.5, 122 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ręka"]
+shape = SubResource( 5 )
+
+[node name="sprite" type="AnimatedSprite" parent="ręka"]
+position = Vector2( -0.5, -0.5 )
+frames = SubResource( 4 )
+frame = 1
