@@ -16,7 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Next Please Game"
+run/main_scene="res://Gabinet_Lekarski.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1148
+window/size/resizable=false
+window/size/fullscreen=true
 
 [rendering]
 
