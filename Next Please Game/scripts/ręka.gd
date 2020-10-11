@@ -24,6 +24,7 @@ func grab_state():
 	
 	sprite.frame = 1
 func idle_state():
+	carried_item = null
 	sprite.frame = 0
 
 
