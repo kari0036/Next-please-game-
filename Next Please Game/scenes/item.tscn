@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/zegr.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 6.0624
 
 [node name="item" type="StaticBody2D" groups=[
 "items",

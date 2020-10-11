@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/stół.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 97.9862, 122.495 )
+extents = Vector2( 88.9247, 111.337 )
 
 [node name="Stół" type="StaticBody2D" groups=[
 "item_holder",
