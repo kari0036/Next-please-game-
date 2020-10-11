@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/pokuj.png" type="Texture" id=1]
+[ext_resource path="res://assets/stół.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Ręka.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/item.tscn" type="PackedScene" id=4]
+
+[node name="World" type="Node2D"]
+
+[node name="pokuj" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="stół2" type="Sprite" parent="."]
+position = Vector2( 347, 125 )
+scale = Vector2( 0.234583, 0.3125 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="ręka" parent="." instance=ExtResource( 3 )]
+position = Vector2( 199, 176 )
+
+[node name="item2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 167 )
+rotation = 3.14159
+
+[node name="item" parent="." instance=ExtResource( 4 )]
+position = Vector2( 78, 167 )

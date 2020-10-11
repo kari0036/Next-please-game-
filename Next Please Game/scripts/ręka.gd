@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 
 enum STATE{
@@ -12,9 +12,17 @@ onready var sprite = $sprite
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+var carried_item
 func grab_state():
-	sprite.frame = 1
+	if (!carried_item):
+		var items = get_overlapping_areas()
+		if items:
+			carried_item = items[0]
+	else:
+		carried_item.position = position
 	
+	
+	sprite.frame = 1
 func idle_state():
 	sprite.frame = 0
 
@@ -27,7 +35,7 @@ func _physics_process(delta):
 
 	if (Input.is_action_pressed("grab")): current_state = STATE.GRAB
 	else: current_state = STATE.IDLE
-
+	
 	match current_state:
 		STATE.IDLE:
 			idle_state()
