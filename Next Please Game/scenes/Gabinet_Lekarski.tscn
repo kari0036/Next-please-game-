@@ -9,8 +9,6 @@
 [ext_resource path="res://scripts/Pause.gd" type="Script" id=7]
 [ext_resource path="res://scripts/Pacjęt.gd" type="Script" id=8]
 
-
-
 [node name="World" type="Node2D"]
 
 [node name="Stół2" type="CanvasLayer" parent="."]

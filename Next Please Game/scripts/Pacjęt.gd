@@ -8,6 +8,11 @@ var heMove = false
 var firstPatient = true
 var goToRoom = false
 
+onready var suit = $suit
+onready var head = $head
+var maxsuit = 2
+var maxhead = 4
+
 func nextPlease():
 	if !heMove:
 		heMove = true
@@ -33,7 +38,8 @@ func changePatient():
 		if position.distance_to(outOfRoom) > 5:
 			velocity = move_and_slide(velocity)
 		else: 
-			#TODO zmmień wygląd postaci
+			suit.frame = randi()%maxsuit
+			head.frame = randi()%maxhead
 			goToRoom = true
 	else:
 		velocity = position.direction_to(room) * 100
