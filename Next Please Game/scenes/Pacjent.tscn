@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/postac1.png" type="Texture" id=1]
+[ext_resource path="res://assets/postac3.png" type="Texture" id=2]
+[ext_resource path="res://assets/postac_strój1.png" type="Texture" id=3]
+[ext_resource path="res://assets/postac_strój2.png" type="Texture" id=4]
+[ext_resource path="res://assets/postac4.png" type="Texture" id=5]
+[ext_resource path="res://assets/postac2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Pacjent.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42.5373, 36.7171 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Pacjent" type="StaticBody2D" groups=[
+"NPC",
+"item_holder",
+]]
+position = Vector2( -83.3385, -36.1134 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="suit" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 2 )
+
+[node name="head" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 3 )
