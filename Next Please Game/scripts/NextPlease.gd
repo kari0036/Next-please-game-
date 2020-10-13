@@ -4,7 +4,7 @@ onready var sprite = $Sprite
 
 func press():
 	sprite.frame = 1
-	get_tree().call_group("NPC", "nextPlease")
+	get_tree().call_group("NPC", "next_please")
 	
 func unpress():
 	sprite.frame = 0

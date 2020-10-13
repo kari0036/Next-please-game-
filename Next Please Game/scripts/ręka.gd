@@ -9,10 +9,10 @@ enum STATE{
 onready var sprite = $sprite
 
 #global var
-var CarriedItem
+var carried_item
 var CurrentState
 var ButtonPresed
-var SavedPositon = Vector2.ZERO
+var saved_position = Vector2.ZERO
 #global var
 
 func _ready():
@@ -20,11 +20,11 @@ func _ready():
 
 
 func grab_state():
-	if !CarriedItem:
+	if !carried_item:
 		for body in  get_overlapping_bodies():
 			if body.is_in_group("items"):
-				CarriedItem = body
-				SavedPositon = CarriedItem.position
+				carried_item = body
+				saved_position = carried_item.position
 				break
 			if body.is_in_group("button"):
 				if !ButtonPresed:
@@ -32,7 +32,7 @@ func grab_state():
 					ButtonPresed = true
 					break
 	else:
-		CarriedItem.position = position
+		carried_item.position = position
 		
 	
 	sprite.frame = 1
@@ -40,14 +40,16 @@ func grab_state():
 func idle_state():
 	var on_holder = false
 	
-	if CarriedItem:
+	if carried_item:
 		for body in get_overlapping_bodies():
 				if body.is_in_group("item_holder"):
 					on_holder = true
+				if body.is_in_group("NPC"):
+					body.get_item(carried_item)
 		if !on_holder:
-			CarriedItem.position = SavedPositon
+			carried_item.position = saved_position
 			
-		CarriedItem = null
+		carried_item = null
 	sprite.frame = 0
 	
 func _physics_process(delta):

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 var velocity = Vector2()
 var room = Vector2(141,123)
@@ -38,7 +38,7 @@ func changePatient():
 		if position.distance_to(outOfRoom) > 5:
 			velocity = move_and_slide(velocity)
 		else: 
-			suit.frame = randi()%maxsuit
+			suit.frame = randi()%maxsuit)
 			head.frame = randi()%maxhead
 			goToRoom = true
 	else:
