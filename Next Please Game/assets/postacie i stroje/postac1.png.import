@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/postac_strój2.png-2bd66de7858fd9f9495f6ed6310beb1e.stex"
+path="res://.import/postac1.png-8125ba0e97c843f0512ac0c9f3fade55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/postac_strój2.png"
-dest_files=[ "res://.import/postac_strój2.png-2bd66de7858fd9f9495f6ed6310beb1e.stex" ]
+source_file="res://assets/postacie i stroje/postac1.png"
+dest_files=[ "res://.import/postac1.png-8125ba0e97c843f0512ac0c9f3fade55.stex" ]
 
 [params]
 

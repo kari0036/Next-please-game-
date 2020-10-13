@@ -2,8 +2,8 @@ extends StaticBody2D
 
 const TARGETX = 141
 const SPAWNPOS = Vector2(320,120)
-const MAXSUIT = 2
-const MAXHEAD = 4
+const MAXSUIT = 6
+const MAXHEAD = 15
 const SMOOTH = 0.1
 
 onready var suit = $suit

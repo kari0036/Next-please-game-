@@ -1,19 +1,34 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://assets/postac1.png" type="Texture" id=1]
-[ext_resource path="res://assets/postac3.png" type="Texture" id=2]
-[ext_resource path="res://assets/postac_strój1.png" type="Texture" id=3]
-[ext_resource path="res://assets/postac_strój2.png" type="Texture" id=4]
-[ext_resource path="res://assets/postac4.png" type="Texture" id=5]
-[ext_resource path="res://assets/postac2.png" type="Texture" id=6]
-[ext_resource path="res://scenes/Pacjent.gd" type="Script" id=7]
+[ext_resource path="res://assets/postacie i stroje/postac1.png" type="Texture" id=1]
+[ext_resource path="res://assets/postacie i stroje/postac3.png" type="Texture" id=2]
+[ext_resource path="res://assets/postacie i stroje/postac_strój1.png" type="Texture" id=3]
+[ext_resource path="res://assets/postacie i stroje/postac_strój2.png" type="Texture" id=4]
+[ext_resource path="res://assets/postacie i stroje/postac4.png" type="Texture" id=5]
+[ext_resource path="res://assets/postacie i stroje/postac2.png" type="Texture" id=6]
+[ext_resource path="res://scripts/Pacjent.gd" type="Script" id=7]
+[ext_resource path="res://assets/postacie i stroje/postac4.1.png" type="Texture" id=8]
+[ext_resource path="res://assets/postacie i stroje/postac_strój3.png" type="Texture" id=9]
+[ext_resource path="res://assets/postacie i stroje/postac3.2.png" type="Texture" id=10]
+[ext_resource path="res://assets/postacie i stroje/postac4.2.png" type="Texture" id=11]
+[ext_resource path="res://assets/postacie i stroje/postac3.1.png" type="Texture" id=12]
+[ext_resource path="res://assets/postacie i stroje/postac_strój6.png" type="Texture" id=13]
+[ext_resource path="res://assets/postacie i stroje/postac_strój5.png" type="Texture" id=14]
+[ext_resource path="res://assets/postacie i stroje/postac1.1.png" type="Texture" id=15]
+[ext_resource path="res://assets/postacie i stroje/postac2.2.png" type="Texture" id=16]
+[ext_resource path="res://assets/postacie i stroje/postac3.3.png" type="Texture" id=17]
+[ext_resource path="res://assets/postacie i stroje/postac1.3.png" type="Texture" id=18]
+[ext_resource path="res://assets/postacie i stroje/postac_strój4.png" type="Texture" id=19]
+[ext_resource path="res://assets/postacie i stroje/postac2.1.png" type="Texture" id=20]
+[ext_resource path="res://assets/postacie i stroje/postac2.3.png" type="Texture" id=21]
+[ext_resource path="res://assets/postacie i stroje/postac1.2.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.5373, 36.7171 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -21,7 +36,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 8 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
