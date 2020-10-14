@@ -9,6 +9,7 @@ const SMOOTH = 0.1
 onready var suit = $suit
 onready var head = $head
 onready var collisionshape = $CollisionShape2D
+onready var terminal = $Terminal/Polygon2D/text
 
 enum STATE{
 	BEGIN,
@@ -24,8 +25,13 @@ var inventory = []
 func next_please():
 	collisionshape.disabled = true
 	match current_state:
-		STATE.IN: current_state = STATE.GO_OUT
-		STATE.BEGIN: current_state = STATE.OUT
+		STATE.IN: 
+			current_state = STATE.GO_OUT
+			terminal.write("end")
+		STATE.BEGIN: 
+			current_state = STATE.OUT
+			
+			
 
 
 
@@ -35,12 +41,14 @@ func go_in():
 	else: 
 		collisionshape.disabled = false
 		current_state = STATE.IN 
+		terminal.write("Hi")
 
 func go_out(): 
 	if SPAWNPOS.x - position.x > 1:
 		position.x = lerp(position.x, SPAWNPOS.x, 0.1)
 	else: 
 		current_state = STATE.OUT
+		terminal.write("Next please!")
 	
 func when_out():
 	randLooks()
@@ -54,9 +62,34 @@ func randLooks():
 
 
 
+func valid_item(item_name):
+	match item_name:
+		"długopis":
+			terminal.write("Nie chce twojego dlugopisu")
+			return false
+		"statoskop":
+			terminal.write("Pacjet ciezko oddycha")
+			return false
+		"recepta":
+			terminal.write("Tutaj nie jest wypisany zaden lek")
+			return false	
+		"recepta_zapisana":
+			terminal.write("Udam sie z tym do apteki")
+			return true	
+		"odznaka":
+			terminal.write("WoW pog champ")
+			return true	
+			
+	terminal.write("Co to?")
+	return false
+	
+
+
 func get_item(item):
-	inventory.append(item.name)
-	item.queue_free()
+	var itemName = item.name
+	if valid_item(itemName):
+		inventory.append(itemName)
+		item.queue_free()
 
 
 
@@ -74,4 +107,4 @@ func _physics_process(delta):
 			go_out()
 		STATE.OUT:
 			when_out()
-	print(inventory)
+	

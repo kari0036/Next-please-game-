@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Next Please Game"
 run/main_scene="res://scenes/Control.tscn"
 
+[audio]
+
+default_bus_layout=""
+
 [display]
 
 window/size/width=444

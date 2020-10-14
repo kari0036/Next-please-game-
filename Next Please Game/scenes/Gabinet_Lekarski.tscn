@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/pokuj.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Stół.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Pacjent.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/Pause.gd" type="Script" id=7]
+[ext_resource path="res://assets/stetoskop.png" type="Texture" id=8]
+[ext_resource path="res://assets/Recepta.png" type="Texture" id=9]
+[ext_resource path="res://assets/zapisana_recepta.png" type="Texture" id=10]
+[ext_resource path="res://assets/długopis.png" type="Texture" id=11]
+[ext_resource path="res://assets/odznaka_dobrego_pacjęta.png" type="Texture" id=12]
+[ext_resource path="res://scripts/RichTextLabel.gd" type="Script" id=13]
 
 [node name="World" type="Node2D"]
 
@@ -14,10 +20,54 @@
 layer = 5
 
 [node name="Stół" parent="Stół2" instance=ExtResource( 2 )]
+position = Vector2( 137.342, 204.289 )
+rotation = 1.5708
+scale = Vector2( 0.469, 0.901 )
 
-[node name="item2" parent="Stół2" instance=ExtResource( 4 )]
-position = Vector2( 305.259, 77.1717 )
+[node name="NextPlease" parent="Stół2" instance=ExtResource( 5 )]
+position = Vector2( 223.568, 164.35 )
+
+[node name="długopis" parent="Stół2" instance=ExtResource( 4 )]
+position = Vector2( 210, 220 )
+
+[node name="Sprite" type="Sprite" parent="Stół2/długopis"]
+position = Vector2( -0.353562, -1.94453 )
+scale = Vector2( 0.602256, 0.657495 )
+texture = ExtResource( 11 )
+
+[node name="recepta" parent="Stół2" instance=ExtResource( 4 )]
+position = Vector2( 140, 190 )
 rotation = 3.14159
+
+[node name="Sprite" type="Sprite" parent="Stół2/recepta"]
+texture = ExtResource( 9 )
+
+[node name="recepta_zapisana" parent="Stół2" instance=ExtResource( 4 )]
+position = Vector2( 110, 221 )
+rotation = 3.14159
+
+[node name="Sprite" type="Sprite" parent="Stół2/recepta_zapisana"]
+texture = ExtResource( 10 )
+
+[node name="odznaka" parent="Stół2" instance=ExtResource( 4 )]
+position = Vector2( 200, 200 )
+rotation = 3.14159
+
+[node name="Sprite" type="Sprite" parent="Stół2/odznaka"]
+position = Vector2( -0.707083, -0.22323 )
+rotation = 3.14159
+scale = Vector2( 0.712737, 0.616203 )
+texture = ExtResource( 12 )
+
+[node name="statoskop" parent="Stół2" instance=ExtResource( 4 )]
+position = Vector2( 63.775, 190.447 )
+rotation = 3.14159
+
+[node name="Sprite" type="Sprite" parent="Stół2/statoskop"]
+position = Vector2( -0.707083, -0.22323 )
+rotation = 3.14159
+scale = Vector2( 0.712737, 0.616203 )
+texture = ExtResource( 8 )
 
 [node name="Room" type="CanvasLayer" parent="."]
 layer = 3
@@ -25,9 +75,6 @@ layer = 3
 [node name="pokuj" type="Sprite" parent="Room"]
 texture = ExtResource( 1 )
 centered = false
-
-[node name="NextPlease" parent="Room" instance=ExtResource( 5 )]
-position = Vector2( 223.568, 164.35 )
 
 [node name="Hand" type="CanvasLayer" parent="."]
 layer = 12
@@ -83,5 +130,30 @@ text = "Quit"
 layer = 4
 
 [node name="Pacjent" parent="NPC" instance=ExtResource( 6 )]
-position = Vector2( 320, 120 )
+position = Vector2( 333.197, 132.141 )
+
+[node name="Terminal" type="CanvasLayer" parent="NPC/Pacjent"]
+layer = 5
+
+[node name="Polygon2D" type="Polygon2D" parent="NPC/Pacjent/Terminal"]
+color = Color( 0.2, 0.196078, 0.196078, 1 )
+polygon = PoolVector2Array( 250.083, 0.0511408, 444.016, 0.030457, 443.879, 95.9216, 248.938, 93.2729 )
+
+[node name="text" type="RichTextLabel" parent="NPC/Pacjent/Terminal/Polygon2D"]
+margin_left = 257.0
+margin_top = 6.0
+margin_right = 439.0
+margin_bottom = 85.0
+bbcode_enabled = true
+visible_characters = 1
+tab_size = 2
+scroll_following = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="NPC/Pacjent/Terminal/Polygon2D/text"]
+wait_time = 0.05
 [connection signal="pressed" from="PauseScreen/Pause/CenterContainer/VBoxContainer/Button" to="PauseScreen/Pause" method="_on_Button_pressed"]
+[connection signal="timeout" from="NPC/Pacjent/Terminal/Polygon2D/text/Timer" to="NPC/Pacjent/Terminal/Polygon2D/text" method="_on_Timer_timeout"]

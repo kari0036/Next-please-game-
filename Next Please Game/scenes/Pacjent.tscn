@@ -44,7 +44,6 @@ animations = [ {
 
 [node name="Pacjent" type="StaticBody2D" groups=[
 "NPC",
-"item_holder",
 ]]
 position = Vector2( -83.3385, -36.1134 )
 script = ExtResource( 7 )
